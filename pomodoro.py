@@ -9,9 +9,9 @@ GREEN = "#9bdeac"
 YELLOW = "#f7f5dd"
 FONT_NAME = "Courier"
 
-WORK_MIN = 5
-SHORT_BREAK_MIN = 4
-LONG_BREAK_MIN = 7
+WORK_MIN = 25
+SHORT_BREAK_MIN = 5
+LONG_BREAK_MIN = 25
 reps = 0
 timer = None
 
@@ -34,15 +34,15 @@ def start_timer():
     reps += 1
 
     if reps >= 8 and reps % 8 == 0:
-        total_time = LONG_BREAK_MIN
+        total_time = LONG_BREAK_MIN * 60
         title.config(text=f"Long Break Well Done!", fg=RED, font=(FONT_NAME, 20, "bold"))
 
     elif reps % 2 == 0:
-        total_time = SHORT_BREAK_MIN
+        total_time = SHORT_BREAK_MIN * 60
         title.config(text="Short Break", fg=PINK)
 
     elif reps % 2 != 0:
-        total_time = WORK_MIN
+        total_time = WORK_MIN * 60
         title.config(text=f"Please Study!", fg="green", font=(FONT_NAME, 25, "normal"))
 
     countdown(total_time)
