@@ -15,8 +15,6 @@ LONG_BREAK_MIN = 25
 reps = 0
 timer = None
 
-
-
 # ---------------------------- TIMER RESET ------------------------------- #
 
 def reset_timer():
@@ -47,9 +45,6 @@ def start_timer():
 
     countdown(total_time)
 
-
-# ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
-
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
 window.title("Pomodoro")
@@ -75,6 +70,7 @@ reset_button = Button(text="Reset", command=reset_timer)
 start_button.grid(column=0, row=2)
 reset_button.grid(column=2, row=2)
 
+# ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 
 def countdown(count):
     check = ""
